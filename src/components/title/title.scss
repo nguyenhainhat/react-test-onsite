@@ -1,0 +1,32 @@
+@import "../../scss/index";
+
+.title {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    img {
+      background-color: $white;
+      padding-inline: 20px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 1px;
+      bottom: 75%;
+      transform: translateX(-50%);
+      background-color: #bab9a0;
+      z-index: -1;
+    }
+    h2 {
+        @include fontSize(1rem, 2vw, 3.4rem);
+        font-family: $font-family2;
+    }
+}
+.normal {
+    img {
+      background-color: #f4f3f3;
+
+    }
+}

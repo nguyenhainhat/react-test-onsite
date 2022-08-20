@@ -1,0 +1,63 @@
+@import "../../scss/index";
+
+.slider_item {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+  text-align: center;
+  @include flex(center, center);
+  color: $white;
+  &_container {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 85%;
+    & > * {
+      z-index: 2;
+      font-family: $font-family2;
+    }
+    p {
+      @include fontSize(0.8rem, 2vw, 1.4rem);
+    }
+    @include minWidth($lg) {
+      width: 50%;
+      gap: 0.6rem;
+    }
+  }
+  h5 {
+    color: #dfd07f;
+    @include fontSize(0.8rem, 2vw, 1.4rem);
+  }
+  h2 {
+    font-weight: 300;
+    @include fontSize(1.6rem, 3vw, 6rem);
+  }
+  span {
+    width: 20%;
+    height: 1px;
+    background-color: $white;
+    margin-block: 1rem;
+  }
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: #000;
+    z-index: 1;
+  }
+  @include minWidth($lg){
+  height: 80vh;
+
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: $white !important;
+}

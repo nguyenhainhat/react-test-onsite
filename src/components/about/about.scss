@@ -1,0 +1,68 @@
+@import "../../scss/index";
+
+.about {
+  margin-block: 2rem;
+  &_container {
+    @include flex(start, center);
+  }
+  &_left {
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    
+
+    h2 {
+      @include fontSize(1.6rem, 2vw, 3.3rem);
+    }
+    p {
+      @include fontSize(0.8rem, 1vw, 1.6rem);
+      
+    }
+  }
+  &_right {
+    width: auto;
+  }
+  &_icon {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    img {
+      background-color: $white;
+      padding-inline: 20px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 1px;
+      bottom: 50%;
+      transform: translateX(-60%);
+      background-color: #bab9a0;
+      z-index: -1;
+    }
+  }
+  @include minWidth($lg) {
+    margin-block: 8rem;
+    &_left {
+      gap: 1rem;
+    margin-right: 4rem;
+
+    }
+    &_right {
+      width: 150%;
+    }
+  }
+  @include maxWidth(991px) {
+    &_container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &_left {
+      order: 2;
+    }
+    &_right {
+      order: 1;
+    }
+  }
+}

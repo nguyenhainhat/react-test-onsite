@@ -1,0 +1,43 @@
+@import "../../scss/index";
+
+.bookNow {
+  margin-top: -0.5rem;
+  background-color: $secondary-color;
+  color: $white;
+  padding: 20px 15px;
+  .form {
+    &_container {
+      @include flex(center,start);
+      gap: 1rem;
+      flex-wrap: wrap;
+      @include minWidth($x-lg) {
+        flex-wrap: no-wrap;
+        justify-content: space-between;
+      }
+    }
+    &_item {
+      @include flex(start, center);
+      flex-direction: column;
+      label {
+        margin-bottom: 0.5rem;
+        color: #B7B3AA;
+      }
+      select,
+      input {
+        @include size(180px, 40px);
+        padding-inline: 1rem;
+        outline: transparent;
+        border: 1px solid #B7B3AA;
+        background-color: $secondary-color;
+        color: $white;
+        :focus {
+          outline: transparent;
+          border: transparent;
+        }
+      }
+    }
+    .btn_book {
+      align-self: flex-end;
+    }
+  }
+}

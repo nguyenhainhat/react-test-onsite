@@ -1,0 +1,100 @@
+@import "../../scss/index";
+
+.detail {
+  background-color: #f4f3f3;
+  :is(&_reason, &_four) {
+    background-color: $white;
+  }
+  &_reason {
+    text-align: center;
+    padding-block: 3rem;
+    margin-top: -4rem;
+    margin-bottom: 5rem;
+    z-index: 1;
+    position: relative;
+    &_container {
+      @include flex(center, center);
+      flex-direction: column;
+      gap: 1rem;
+      margin: auto;
+      padding-inline: 2rem;
+      @include minWidth($lg) {
+        width: 50%;
+      }
+    }
+    &_desc {
+      @include fontSize(1rem, 2vw, 1.4rem);
+    }
+    &_page {
+      @include flex(center, center);
+      gap: 0.5rem;
+      @include fontSize(1rem, 2vw, 1.6rem);
+      flex-wrap: wrap;
+    }
+  }
+  &_four {
+    padding: 1rem;
+    @include flex(center, center);
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    &_content {
+      background-color: #f4f3f3;
+      padding: 2rem;
+      @include flex(start, center);
+      gap: 1rem;
+      flex-direction: column;
+      & > * {
+        @include fontSize(1rem, 2vw, 1.4rem);
+      }
+    }
+    @include minWidth($lg) {
+      padding: 3rem;
+    }
+  }
+  &_cate {
+    &_block {
+      @include flex(center, center);
+      gap: 3rem;
+    }
+    &_item {
+      margin-top: 2rem;
+      @include flex(center, center);
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      background-color: $white;
+      padding: 2rem;
+      @include minWidth($lg) {
+        gap: 2rem;
+        img {
+            margin-bottom: -4rem;
+        @include size(500px, 250px);
+
+        }
+      }
+      img {
+        @include size(500px, 280px);
+      }
+      h3 {
+        @include fontSize(1rem, 2vw, 2rem);
+        font-family: $font-family2;
+        color: #e4dec7;
+      }
+      p {
+        @include fontSize(0.8rem, 2vw, 1.4rem);
+      }
+    }
+  }
+  &_room {
+    background-color: $white;
+    margin-top: 5rem;
+    padding-block: 2rem 1rem;
+    .detail_cate_item {
+      background-color: #f4f3f3;
+    }
+    @include minWidth($lg) {
+    padding-block: 4rem;
+    }
+  }
+}

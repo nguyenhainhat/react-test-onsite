@@ -1,0 +1,95 @@
+@import "../../scss/index";
+
+.menu {
+  text-align: center;
+  background-color: #f3f3f3;
+  margin-top: 0.6rem;
+  .hover,
+  .active {
+    background-color: $black;
+    color: $white;
+
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    & > * {
+      color: $white;
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    a {
+      padding-block: 10px;
+    }
+  }
+  .active {
+    padding: 24px 20px;
+    height: 100%;
+  }
+  .hover {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 50%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid black;
+      transform: translateX(50%);
+      z-index: 9;
+    }
+  }
+
+  li {
+    display: inline-block;
+    @include fontSize(0.6rem, 2vw, 1rem);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  &_last {
+    background-color: $btn-color;
+    padding: 12px 10px;
+    span {
+      color: $white;
+      font-weight: 600;
+    }
+  }
+
+  &_view {
+    position: relative;
+    @include flex(center, center);
+    li a {
+      padding: 12px 20px !important;
+    }
+  }
+  &_item {
+    &_drop {
+      padding: 12px 20px;
+    }
+  }
+
+  &_drop {
+    height: 0;
+    background-color: #d5d4d2;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #6c6865;
+    @include flex(center, center);
+    li {
+      height: 100%;
+    }
+    li a {
+      @include fontSize(0.6rem, 2vw, 1rem);
+      padding: 30px 10px;
+      @include minWidth($xx-lg) {
+        padding: 20px;
+      }
+    }
+  }
+  &_drop_open {
+    height: 100px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @include minWidth($xx-lg) {
+      height: 60px;
+    }
+  }
+}
